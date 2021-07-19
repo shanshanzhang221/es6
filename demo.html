@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id = 'button'></div> -->
+    <button>得到所有的省份数据</button>
+    <script>
+    // var div = document.getElementById('button');
+    // for(let i = 0;i<=10;i++){
+    //     var button = document.createElement('button');
+    //     button.innerHTML='按钮'+i;
+    //     button.onclick = function(){
+    //         console.log(i);
+    //     }
+    //     div.appendChild(button);
+    // }
+    //  function sum(...nums){
+    //      let sum = 0;
+    //      for(let i = 0;i<nums.length;i++){
+    //          sum+=nums[i];
+    //      }
+    //      console.log(sum);
+    //  }
+    //  sum(1,2,5,67,8)
+    // function sum(a=1,b=2,c){
+    //    return a+b+c;
+    // }
+    // console.log(sum(2,undefined,5));
+    // const ac = `zhangshan
+    //      疏忽
+    // 耍哈孙`
+    // console.log(ac);
+    // let abc = 'chsehng毁损然后'
+    // console.log(abc.includes('eng',2));
+    
+    // 展开运算符是浅拷贝的，可以在他的基础上增加，变为深拷贝
+    // const obj1 = {
+    //     name:'chengge',
+    //     loves:['chengsao1','chengsao2','dengsao'],
+    //     address:{
+    //         country:'china',
+    //         province:'heilongjiang',
+    //         city:'haerbin'
+    //     }
+    // }
+    // const obj2 = {
+    //     ...obj1,
+    //     name:"dengge",
+    //     address:{
+    //         ...obj1.address,
+    //         city:'changchun'
+    //     },
+    //     loves:[
+    //         ...obj1.loves,
+    //         'dengdap2'
+    // ],
+    // }
+    // console.log(obj2);
+
+    //科里化,用户固定某个函数的前面参数，得到一个新的函数，新的函数调用时，接收剩余的参数
+    // function cal(a,b,c,d){
+    //     return a+b+c+d;
+    // }
+    // const newcla = curry(cal,1,3);
+    // console.log(newcla(5,5));
+
+    // const obj1 = [1,3,5,6,8];
+    // const obj2 = [...obj1,9,10];
+    // console.log(obj2);
+
+    // const obj = {
+    //     count:0,
+    //     start:function(){
+    //         setInterval(()=>{
+                
+    //            console.log(this.count++);
+    //         },1000);
+    //     }
+    // }
+    // obj.start();
+
+    // const print = num=>{
+    //     console.log(num);
+    // }
+    // print(2);
+
+    // const print = num=>num%2==0;
+    // console.log(print(14));
+
+    // const sum = (a,b)=>({
+    //     a:a,
+    //     b:b,
+    //     sum:a+b
+
+    // })
+    // console.log(sum(2,3));
+
+    // const arrays = [1,3,5,2,4,6];
+    // const rel = arrays.filter(key=>key%2!=0).map(num=>num*2).reduce((a,b)=>a*b);
+    // console.log(rel);
+
+    // const prop1 = 'name';
+    // const prop2 = 'age';
+    // const prop3 = 'sayhello';
+    // const user = {
+    //     [prop1]:'jicheg',
+    //     [prop2]:'19',
+    //     [prop3](){
+    //         console.log(this[prop1],this[prop2]);
+    //     }
+    // }
+    // console.log(user);
+    // user[prop3]();
+
+    // const obj1 = {
+    //     a:2
+    // }
+    // const obj2 = {
+    //     b:3
+    // }
+    // Object.setPrototypeOf(obj1,obj2);
+    // console.log(obj1);
+
+//   for(let i = 0;i<10;i++){
+//       setTimeout(() => {
+//           console.log(i)
+//       }, 1000);
+//   }
+
+    //以前的方法
+//    function Animal(type,name,age,sex){
+//        this.type = type;
+//        this.name = name;
+//        this.age = age;
+//        this.sex = sex;
+//    }
+//    Animal.prototype.print = function(){
+//        console.log(`
+//              [类型]：${this.type}
+//              [名字]：${this.name}
+//              [年龄]：${this.age}
+//              [性别]：${this.sex}
+//         `       );
+//    }
+//    const animal = new Animal('dog','huahua','12','gong');
+//    animal.print();
+
+   //以前的继承
+//    function Dog(name,age,sex){
+//        Animal.call(this,'gougou',name,age,sex)
+//    }
+//    Object.setPrototypeOf(Dog.prototype,Animal.prototype);
+//    const d = new  Dog('wangcai',3,'gong');
+//    d.print();
+
+//类的方法
+// const printname = 'print';
+//     class Animal{
+//        constructor(type,name,age,sex){
+//        this.type = type;
+//        this.name = name;
+//        this.age = age;
+//        this.sex = sex;
+//    }
+//    get age(){
+//        return this._age+'岁';
+//    }
+//    set age(age){
+//        if(age>1000){
+//            age=1000
+//        }else if(age<0){
+//            age = 0;
+//        }
+//        this._age = age;
+//    }
+//       [printname](){
+//           console.log(`
+//               [类型]：${this.type}
+//               [名字]：${this.name}
+//               [年龄]：${this.age}
+//               [性别]：${this.sex}
+//      `
+//           )
+//       }
+
+//     }
+    // const animal = new Animal('gou','huanhuan','18','nv');
+
+    //  class Dog extends Animal{
+    //       constructor(name,age,sex){
+    //           super('gougou',name,age,sex);
+    //           //子类自己的属性
+    //           this.loves = 'chigutou'
+    //       }
+    //       print(){
+    //           super.print();
+    //           //自己的代码
+    //           console.log(`[爱好]：${this.loves}`);
+    //       }
+    //       //如果有同名方法则会覆盖父类
+    //       jiao(){
+    //           console.log('wamhwamh');
+    //       }
+    //  }
+    //   const aa = new Dog('huahua',3,'nv');
+    //   aa.print();
+    //   console.log(aa);
+    //   aa.jiao();
+
+
+    
+
+//字段初始化器
+// class Test{
+//     static a=1
+//     b=2
+//     c=3;//相当于在contructer里面写
+//     constructor(){
+//         this.d = this.c+this.b
+//     }
+//     print=()=>{//正常的在原型上，这样写在对象上
+//         console.log(this.d)
+//     }
+
+
+// }
+// const a = new Test()
+// const p = a.print();
+
+//  const PP = class{
+//      aa=2
+//      bb=3
+//      cc=4
+//  }
+//  const aa = new PP();
+//  console.log(aa);
+
+// function print({name,age,address:{city}}){
+//     console.log('[名字]:'+name);
+//     console.log('[城市]:'+city);
+// }
+
+// const user = {
+//     name:'张珊',
+//     sex:'nv',
+//     age:21,
+//     address:{
+//         province:'henan',
+//         city:'nanyang'
+//     }
+// }
+// print(user);
+//对象的解构，是先声明的，没有的属性 是undefined，可以设置默认值
+// let {name,sex,age,address,abc=123}=user;
+// console.log(name,sex,abc);
+
+//解构同名属性
+// let {name,sex:gender,age}=user;
+// console.log(gender);//输出sex是错误的
+
+//解构对象中的对象
+// let {name,sex,address:{city}}=user;
+// console.log(city);//输出address是错误的
+
+//数组的解构，和对象大体上相同，只是把大括号变成了中括号
+// const obj = [1,2,3,4,[3,4,5]];
+// let [,,,,[,,a]]=obj;
+// console.log(a);
+
+// let [,b,]=obj[4];
+// console.log(b);
+//使用剩余参数
+// let[,a,...obj1] = obj;
+// console.log(obj1);
+
+//交换两个数的值
+// let a = 1,b=2;
+// [b,a] = [a,b];
+// console.log(a,b);
+
+//对参数进行解构
+// function ajax({
+//     method ,
+//     url
+// }=[]){
+//     console.log(method,url)
+// }
+// ajax({
+
+// })
+
+// const abc = Symbol('fuhao');
+// console.log(abc);
+// const obj = {
+//     a:1,
+//     b:2,
+//     [abc]:3
+// }
+// console.log(Object.getOwnPropertySymbols(obj));
+
+// const hero = (function(){
+//     const getrendom = Symbol();
+//     return{          
+//         attack:30,
+//         gongji(){
+//             const smg = this.attack*this[getrendom](0.8,0.6);
+//             console.log(smg);
+//         },
+//         [getrendom](min,max){
+//            return Math.random()*(max-min)-min;
+//         }
+//     }
+
+// })();
+// console.log(hero);
+// hero.gongji();
+// hero[getrendom]();
+
+//回调地狱的例子
+// function biaobai(god,callback){
+//     console.log(`登哥向${god}表白`);
+//     setTimeout(()=>{
+//         if(Math.random()<0.7){
+//             callback(true);
+//         }else{
+//             callback(false);
+//         }
+//     },1000)
+
+// }
+// biaobai('女神1',function(result){
+//     if(result){
+//         console.log('女神1答应了，登哥很开心');
+//     }else{
+//         console.log('女神1拒绝了，登哥表示无压力，向女神2表白');
+//         biaobai('女神2',function(result){
+//             if(result){
+//                 console.log('女神2答应了，登哥很开心');
+//             }else{
+//                 console.log('女神2很感动，但是拒绝了，向女神3表白');
+//                 biaobai('女神3',function(result){
+//                     if(result){
+//                         console.log('女神3答应了');
+//                     }else{
+//                         console.log('女神3拒绝了，登哥表示生无可恋');
+//                     }
+//                 })
+//             }
+//         })
+//     }
+// })
+
+// function biaobai(god){
+//     return new Promise((resolve,reject)=>{
+//         console.log(`登哥向${god}表白`);
+//         setTimeout(()=>{
+//         if(Math.random()<0.7){
+//             resolve(true);
+//         }else{
+//             resolve(false);
+//         }
+//     },1000);
+//     })
+// }
+// biaobai('女神1').then(result=>{
+//     console.log(result);
+// })
+
+// const pro1 = new Promise((resolve,reject)=>{
+//     throw 1;
+// })
+// const pro2 = pro1.then(result=>{
+//     return result*2;
+
+// },err=>{
+//     return err *2;
+// });
+// pro1.catch(err=>{
+//     throw err;
+// })
+// pro2.then(result=>console.log(result*2),err=>console.log(err*2));
+ 
+//  function biaobai(god){
+//     return new Promise((resolve,reject)=>{
+//         console.log(`登哥向${god}表白`);
+//         setTimeout(()=>{
+//         if(Math.random()<0.7){
+//             resolve(true);
+//         }else{
+//             resolve(false);
+//         }
+//     },1000);
+//     })
+// }
+// const gods = ['女神1','女神2','女神3','女神4'];
+// let pro;
+// for(let i = 0;i<gods.length;i++){
+//     if(i===0){
+//         pro = biaobai(gods[i]);
+//     }
+//     pro = pro.then(result=>{
+//         if(result===undefined){
+//             return;
+//         }else if(result){
+//             console.log(`${gods[i]}同意了`);
+//             return;
+//         }else{
+//             console.log(`${gods[i]}拒绝了`);
+//             if(i<gods.length-1){
+//                 return biaobai(gods[i+1]);
+//             }else{
+//                 console.log('全都拒绝了');
+//             }
+
+//         }
+//     })
+// }
+
+    function getprovince(){
+        const url = 'http://101.132.72.36:5100/api/local';
+        const config = {
+            method:'get',
+            headers:{
+                a=1,
+                b=2
+            }
+        }
+        fetch(url,config).then(resp =>{
+            console.log(resp)
+        }).catch(err=>{
+            cnosole.log(err)
+        })
+    }
+    document.querySelector('button').onclick = function(){
+        getprovince();
+    }
+     
+
+
+
+    
+        
+    </script>
+</body>
+</html>
